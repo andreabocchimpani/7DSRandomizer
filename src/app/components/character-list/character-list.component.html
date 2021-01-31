@@ -1,0 +1,39 @@
+<div>
+    <button type="button" class="home-icon"> 
+        <img [routerLink]="['/home']" src="./assets/images/home-icon-white.svg">
+    </button>
+</div>
+
+<div class="filter-section">
+    <h3>Filters</h3>
+    <div class="grade-filter">
+        <p>Grade</p>
+        <label class="container">
+            <input type="checkbox" (click)="filterByGrade(this.characters, 'ssr')">
+            <span class="checkmark">SSR</span>
+        </label>
+        <label class="container">
+            <input type="checkbox">
+            <span class="checkmark">SR</span>
+        </label>
+        <label class="container">
+            <input type="checkbox">
+            <span class="checkmark">R</span>
+        </label>
+    </div>
+
+</div>
+
+<div class="characters-container">
+    <div class="characters-list">
+        <div *ngFor="let character of characters">
+            <div class="single-character">
+                <img src={{character.images}}>
+                <span class="character-name">{{character.name}}</span>
+                <span class="character-name">{{character.grade}}</span>
+                <span class="character-name">{{character.race}}</span>
+                <span class="character-name">{{character.attribute}}</span>
+            </div>
+        </div>
+    </div>
+</div>

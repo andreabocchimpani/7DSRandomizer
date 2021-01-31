@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <button type="button" class="home-icon"> 
+            <img [routerLink]="['/home']" src="./assets/images/home-icon-white.svg">
+        </button>
+    </div>
+
+    <button class="randomButton" (click)="randomCharacter()">Select a character</button>
+    <div *ngIf="this.isCharacterSelected">
+        <div class="single-character">
+            <img src={{this.isCharacterSelected.images}}>
+            <span class="character-name">{{this.isCharacterSelected.name}}</span>
+        </div>
+    </div>
+
+    <button class="randomButton" (click)="getMoreRandom(this.characters, 4)">Select a squad</button>
+    <div *ngIf="this.squad" class="squad">
+        <div *ngFor="let character of squad">
+            <div class="single-character">
+                <img src={{character.images}}>
+                <span class="character-name">{{character.name}}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.home-icon{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.randomButton{
+    height: 40px;
+    background: white;
+    border-style: none;
+    border-radius: 8px;
+    margin: 20px 0px 0px 30px;
+}
+
+.single-character{
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    margin: 24px
+}
+
+.character-name{
+    font-size: 13px;
+    color: white;
+    margin-top: 4px;
+}
+
+.squad{
+    display: flex;
+}

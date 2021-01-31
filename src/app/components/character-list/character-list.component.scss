@@ -1,0 +1,38 @@
+.home-icon{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.characters-list{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.single-character{
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    margin: 24px
+}
+
+.character-name{
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.characters-container{
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-section{
+    color: white;
+}
+
+.grade-filter{
+    display: flex;
+}

@@ -1,0 +1,39 @@
+.home-container{
+    // background-image: url("src/assets/images/logo-7ds-opacized.png");
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // background-position: center center;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-section{
+    width: 100%;
+    text-align: center;
+}
+
+.header-image{
+    width: 60%;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.home-button{
+    height: 50px;
+    font-size: xx-large;
+    background: white;
+    border-style: none;
+    border-radius: 8px;
+    margin: 20px 0px 0px 30px;
+    // color: #F35C27;
+    // border: solid 2px black;
+}
