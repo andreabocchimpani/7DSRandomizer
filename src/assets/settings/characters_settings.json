@@ -608,6 +608,13 @@
         "attribute": "speed"
     },
     {
+        "name": "Guardian Jericho [Knight of Frost]",
+        "images": "./assets/images/[Knight of Frost] Guardian_Jericho.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "strength"
+    },
+    {
         "name": "Jericho Guardian [Godspeed Knight]",
         "images": "./assets/images/[Godspeed Knight] Guardian Jericho.png",
         "grade": "ssr",
@@ -647,6 +654,13 @@
         "images": "./assets/images/[Weird Fangs] Holy Knight Jude.png",
         "grade": "r",
         "race": "human",
+        "attribute": "strength"
+    },
+    {
+        "name": "King Far [Disaster Old]",
+        "images": "./assets/images/[Disaster Old] Fart King.png",
+        "grade": "ssr",
+        "race": "fairy",
         "attribute": "strength"
     },
     {
@@ -896,6 +910,13 @@
         "attribute": "hp"
     },
     {
+        "name": "Roxy Queen of Explosions [Halloween]",
+        "images": "./assets/images/[Halloween] Queen of Explosions Roxy.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "strength"
+    },
+    {
         "name": "Roxy Queen of Explosions [Mad Destroyer]",
         "images": "./assets/images/[Mad Destroyer] Queen of Explosions Roxy.png",
         "grade": "ssr",
@@ -921,6 +942,13 @@
         "images": "./assets/images/[The Four Archangels] Sariel of Tornado.png",
         "grade": "ssr",
         "race": "goddess",
+        "attribute": "strength"
+    },
+    {
+        "name": "Shin Gamer [Halloween]",
+        "images": "./assets/images/[Halloween] Gamer Shin.png",
+        "grade": "ssr",
+        "race": "human",
         "attribute": "strength"
     },
     {

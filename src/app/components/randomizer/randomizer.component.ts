@@ -11,17 +11,27 @@ export class RandomizerComponent implements OnInit {
   public characters: any;
   public isCharacterSelected: any
   public squad: any;
+  public filteredCharacters: any[];
+  public filters: any;
 
-  constructor(private characterservice: CharacterService) { }
+  constructor(private characterservice: CharacterService) { 
+    this.filteredCharacters = [];
+    this.filters = {};
+  }
 
   ngOnInit(): void {
+    this.initCharacterList();
+  }
+
+  initCharacterList(){
     this.characterservice.getCharacter().subscribe(c => {
       this.characters = c;
+      this.filteredCharacters = c;
     })
   }
 
   randomCharacter() {
-    var selectedCharacter = this.characters[Math.floor(Math.random() * this.characters.length)];
+    var selectedCharacter = this.filteredCharacters[Math.floor(Math.random() * this.filteredCharacters.length)];
     console.log('selected', selectedCharacter);
     this.isCharacterSelected = selectedCharacter;
   }
@@ -38,5 +48,32 @@ export class RandomizerComponent implements OnInit {
         taken[x] = --len in taken ? taken[len] : len;
     }
     return this.squad;
-}
+  }
+
+  filterBy(value: any, type: string){
+    if (!this.filters[type]) {
+      this.filters[type] = [];
+    }
+    if (this.filters[type].includes(value)){
+      this.filters[type].splice(this.filters[type].indexOf(value), 1);
+    } else {
+      this.filters[type].push(value)
+    }
+    console.log('filter', this.filters[type])
+    this.filterCharacters();
+  }
+
+  filterCharacters(){
+    this.filteredCharacters = this.characters;
+    for (const key in this.filters) {
+      if (Object.prototype.hasOwnProperty.call(this.filters, key)) {
+        const filters = this.filters[key];
+        if (filters.length > 0) {
+          this.filteredCharacters = this.filteredCharacters.filter(c => filters.some(f => c[key] === f));
+        }
+      }
+    }
+    console.log('charcathers filtrato', this.filteredCharacters)
+  }
+
 }

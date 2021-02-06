@@ -1,25 +1,132 @@
-<div>
-    <div>
+<div class="randomizer-container">
+    <div class="button-container">
         <button type="button" class="home-icon"> 
             <img [routerLink]="['/home']" src="./assets/images/home-icon-white.svg">
         </button>
+        <!-- <img style="width: 200px;" src="./assets/images/Hawk.png"> -->
     </div>
 
-    <button class="randomButton" (click)="randomCharacter()">Select a character</button>
-    <div *ngIf="this.isCharacterSelected">
-        <div class="single-character">
-            <img src={{this.isCharacterSelected.images}}>
-            <span class="character-name">{{this.isCharacterSelected.name}}</span>
+    <div class="filter-section">
+        <div class="filter-title">
+            Filters
         </div>
+    
+        <div class="filter-container">
+
+            <div class="filter-grade">
+                <div class="single-section-filter">
+                    <div class="icon-title">Grade</div>
+                    <div class="icon-container">
+                        <label class="container">
+                            <img class="icon-filter" src="./assets/images/ssr.png">
+                            <input type="checkbox" (click)="filterBy('ssr', 'grade')">
+                        </label>
+                        <label class="container">
+                            <img class="icon-filter" src="./assets/images/sr.png">
+                            <input type="checkbox" (click)="filterBy('sr', 'grade')">
+                        </label>
+                        <label class="container">
+                            <img class="icon-filter" src="./assets/images/r.png">
+                            <input type="checkbox" (click)="filterBy('r', 'grade')">
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="filter-race">
+                <div class="single-section-filter">
+                    <div class="icon-title">Race</div>
+                    <div>
+                        <div class="left">
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_human.png">
+                                <input type="checkbox" (click)="filterBy('human', 'race')">
+                                <span class="race-name">Human</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_demon.png">
+                                <input type="checkbox" (click)="filterBy('demon', 'race')">
+                                <span class="race-name">Demon</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_fairy.png">
+                                <input type="checkbox" (click)="filterBy('fairy', 'race')">
+                                <span class="race-name">Fairy</span>
+                            </label>
+                        </div>
+                        <div class="right">
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_giant.png">
+                                <input type="checkbox" (click)="filterBy('giant', 'race')">
+                                <span class="race-name">Giant</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_goddess.png">
+                                <input type="checkbox" (click)="filterBy('goddess', 'race')">
+                                <span class="race-name">Goddes</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_unknown.png">
+                                <input type="checkbox" (click)="filterBy('unknown', 'race')">
+                                <span class="race-name">Unknown</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="filter-attribute">
+                <div class="single-section-filter">
+                    <div class="icon-title">Attribute</div>
+                    <div class="icon-container">
+                        <label class="container">
+                            <img class="icon-filter" src="./assets/images/attribute_strength.png">
+                            <input type="checkbox" (click)="filterBy('strength', 'attribute')">
+                        </label>
+                        <label class="container">
+                            <img class="icon-filter" src="./assets/images/attribute_speed.png">
+                            <input type="checkbox" (click)="filterBy('speed', 'attribute')">
+                        </label>
+                        <label class="container">
+                            <img class="icon-filter" src="./assets/images/attribute_hp.png">
+                            <input type="checkbox" (click)="filterBy('hp', 'attribute')">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     </div>
 
-    <button class="randomButton" (click)="getMoreRandom(this.characters, 4)">Select a squad</button>
-    <div *ngIf="this.squad" class="squad">
-        <div *ngFor="let character of squad">
-            <div class="single-character">
-                <img src={{character.images}}>
-                <span class="character-name">{{character.name}}</span>
+    <div class="random-container">
+        <div class="single-character-container">
+            <button class="random-button" (click)="randomCharacter()">Select a character</button>
+            <div class="no-character" *ngIf="!this.isCharacterSelected"></div>
+            <div *ngIf="this.isCharacterSelected">
+                <div class="single-character">
+                    <img src={{this.isCharacterSelected.images}}>
+                    <span class="character-name">{{this.isCharacterSelected.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="squad-container">
+            <button class="random-button" (click)="getMoreRandom(this.filteredCharacters, 4)">Select a squad</button>
+            <div class="nosquad" *ngIf="!this.squad">
+                <div class="no-character"></div>
+                <div class="no-character"></div>
+                <div class="no-character"></div>
+                <div class="no-character"></div>
+            </div>
+            <div *ngIf="this.squad" class="squad">
+                <div *ngFor="let character of squad">
+                    <div class="single-character">
+                        <img src={{character.images}}>
+                        <span class="character-name">{{character.name}}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 </div>
