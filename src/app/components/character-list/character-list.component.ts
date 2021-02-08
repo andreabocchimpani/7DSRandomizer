@@ -15,6 +15,8 @@ export class CharacterListComponent implements OnInit {
   public filterRace: any[];
   public filterAttribute: any[];
   public filters: any;
+  public searchString: string;
+  public isCompact: boolean;
 
   constructor(private characterservice: CharacterService) {
     this.filteredCharacters = [];
@@ -22,6 +24,8 @@ export class CharacterListComponent implements OnInit {
     this.filterRace = [];
     this.filterAttribute = [];
     this.filters = {};
+    this.searchString = '';
+    this.isCompact = false;
    }
 
   ngOnInit(): void {
@@ -59,6 +63,10 @@ export class CharacterListComponent implements OnInit {
       }
     }
     console.log('charcathers filtrato', this.filteredCharacters)
+  }
+
+  changeView(){
+    this.isCompact = !this.isCompact;
   }
 
   // filterByGrade(grade: any){
