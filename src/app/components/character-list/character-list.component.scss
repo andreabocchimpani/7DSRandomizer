@@ -1,6 +1,8 @@
 .home-icon{
     background-color: transparent;
     border-color: transparent;
+    cursor: pointer;
+    padding: 8px;
 }
 
 .to-top-button{
@@ -27,7 +29,7 @@
     display: flex;
     flex-direction: column;
     width: 90px;
-    margin: 8px;
+    margin: 12px;
 }
 
 .character-image{
@@ -71,6 +73,10 @@
         font-size: 10px;
         margin-top: 4px;
         width: 60px;
+    }
+
+    .mama-hawk-icon{
+        height: 80px;
     }
 }
 
@@ -198,6 +204,7 @@
     display: inline-block;
     width: 50px;
     height: 20px;
+    margin-left: 10px;
   }
 
 .switch input {
@@ -231,11 +238,11 @@
 }
  
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #2C6E31;
 }
   
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2C6E31;
 }
   
 input:checked + .slider:before {
@@ -251,4 +258,19 @@ input:checked + .slider:before {
   
 .slider.round:before {
     border-radius: 50%;
+}
+
+.grade-attribute-mobile{
+    display: flex;
+    justify-content: center;
+}
+
+.compact-button-container{
+    color: white;
+    // float: center;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

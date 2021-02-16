@@ -11,20 +11,37 @@
 .header-section{
     width: 100%;
     text-align: center;
+    height: 35vh;
 }
 
 .header-image{
-    width: 60%;
+    // width: 60%;
+    // height: 40vh;
+    height: 35vh;
+    width: 30vw;;
+}
+
+@media screen and (max-width: 500px) {
+    .header-image{
+        height: 40vh;
+        width: 80vw;
+    }
+}
+
+.mobile-header{
+    height: 100vh;
+    width: 100vw;
 }
 
 .button-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .home-button{
@@ -33,7 +50,58 @@
     background: white;
     border-style: none;
     border-radius: 8px;
-    margin: 20px 0px 0px 30px;
+    margin-top: 20px;
+    cursor: pointer;
     // color: #F35C27;
     // border: solid 2px black;
+}
+
+.random{
+    width: 100vw;
+    height: 30vh;
+    background-image: url("src/assets/images/meliodasvszeldris-opacized.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    // text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    //              0px 8px 13px rgba(0,0,0,0.1),
+    //              0px 18px 23px rgba(0,0,0,0.4);
+    line-height: 30vh;
+    cursor: pointer;
+}
+
+.random:hover{
+    transform: scale(1.03); 
+}
+
+.list{
+    width: 100vw;
+    height: 30vh;
+    background-image: url("src/assets/images/all-sins-opacized.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    // text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    //              0px 8px 13px rgba(0,0,0,0.1),
+    //              0px 18px 23px rgba(0,0,0,0.4);
+    line-height: 30vh;
+    cursor: pointer;
+}
+
+.list:hover{
+    transform: scale(1.03); 
+}
+
+.footer-container{
+    color: white;
+    height: 5vh;
+    line-height: 5vh;
+    margin-left: auto;
+    margin-right: auto;
 }

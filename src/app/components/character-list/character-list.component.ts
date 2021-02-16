@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CharacterService } from 'src/services/character.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character-list',
@@ -7,6 +10,12 @@ import { CharacterService } from 'src/services/character.service';
   styleUrls: ['./character-list.component.scss']
 })
 export class CharacterListComponent implements OnInit {
+
+  isHandset: Observable<boolean> = this.breakpointObserver
+  .observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
 
   public characters: any;
   public isCharacterSelected: any;
@@ -18,7 +27,7 @@ export class CharacterListComponent implements OnInit {
   public searchString: string;
   public isCompact: boolean;
 
-  constructor(private characterservice: CharacterService) {
+  constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) {
     this.filteredCharacters = [];
     this.filterGrade = [];
     this.filterRace = [];
@@ -67,6 +76,10 @@ export class CharacterListComponent implements OnInit {
 
   changeView(){
     this.isCompact = !this.isCompact;
+  }
+
+  toTopPage(){
+    window.scrollTo(0,0);
   }
 
   // filterByGrade(grade: any){

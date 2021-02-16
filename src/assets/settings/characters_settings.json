@@ -14,6 +14,13 @@
         "attribute": "speed"
     },
     {
+        "name": "Arthur New King [Light of Hope]",
+        "images": "./assets/images/[Light of Hope] New King Arthur.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "strength"
+    },
+    {
         "name": "Arthur New King [Camelot's Sword]",
         "images": "./assets/images/[Camelot's Sword] New King Arthur.png",
         "grade": "ssr",
@@ -220,7 +227,8 @@
         "name": "Drole of Patience [The Ten Commandments]",
         "images": "./assets/images/[The Ten Commandments] Drole of Patience.png",
         "grade": "ssr",
-        "race": "hp"
+        "race": "giant",
+        "attribute": "hp"
     },
     {
         "name": "Eastin Noblesse [Ruler of Stormy Seas]",
@@ -330,6 +338,13 @@
     {
         "name": "Eren Yeager [Titan Form]",
         "images": "./assets/images/[Titan Form] Eren Yeager.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "hp"
+    },
+    {
+        "name": "Escanor The One [Invincible Avatar]",
+        "images": "./assets/images/[Invincible Avatar] Escanor The One.png",
         "grade": "ssr",
         "race": "human",
         "attribute": "hp"

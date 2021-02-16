@@ -1,7 +1,7 @@
 <div class="randomizer-container">
     <div class="button-container">
         <button type="button" class="home-icon"> 
-            <img [routerLink]="['/home']" src="./assets/images/home-icon-white.svg">
+            <img [routerLink]="['/home']" class="mama-hawk-icon" src="./assets/images/icon_boarhat.png">
         </button>
         <!-- <img style="width: 200px;" src="./assets/images/Hawk.png"> -->
     </div>
@@ -11,8 +11,8 @@
             Filters
         </div>
     
-        <div class="filter-container">
-
+        <div *ngIf="!(isHandset | async)" class="filter-container">
+    
             <div class="filter-grade">
                 <div class="single-section-filter">
                     <div class="icon-title">Grade</div>
@@ -94,6 +94,94 @@
                     </div>
                 </div>
             </div>
+        </div>
+    
+        <div *ngIf="(isHandset | async)" class="filter-section">
+    
+            <div class="grade-attribute-mobile">
+                <div class="filter-grade">
+                    <div class="single-section-filter">
+                        <div class="icon-title">Grade</div>
+                        <div class="icon-container">
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/ssr.png">
+                                <input type="checkbox" (click)="filterBy('ssr', 'grade')">
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/sr.png">
+                                <input type="checkbox" (click)="filterBy('sr', 'grade')">
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/r.png">
+                                <input type="checkbox" (click)="filterBy('r', 'grade')">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="filter-attribute">
+                    <div class="single-section-filter">
+                        <div class="icon-title">Attribute</div>
+                        <div class="icon-container">
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/attribute_strength.png">
+                                <input type="checkbox" (click)="filterBy('strength', 'attribute')">
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/attribute_speed.png">
+                                <input type="checkbox" (click)="filterBy('speed', 'attribute')">
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/attribute_hp.png">
+                                <input type="checkbox" (click)="filterBy('hp', 'attribute')">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="filter-race">
+                <div class="single-section-filter">
+                    <div class="icon-title">Race</div>
+                    <div>
+                        <div class="left">
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_human.png">
+                                <input type="checkbox" (click)="filterBy('human', 'race')">
+                                <span class="race-name">Human</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_demon.png">
+                                <input type="checkbox" (click)="filterBy('demon', 'race')">
+                                <span class="race-name">Demon</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_fairy.png">
+                                <input type="checkbox" (click)="filterBy('fairy', 'race')">
+                                <span class="race-name">Fairy</span>
+                            </label>
+                        </div>
+                        <div class="right">
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_giant.png">
+                                <input type="checkbox" (click)="filterBy('giant', 'race')">
+                                <span class="race-name">Giant</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_goddess.png">
+                                <input type="checkbox" (click)="filterBy('goddess', 'race')">
+                                <span class="race-name">Goddes</span>
+                            </label>
+                            <label class="container">
+                                <img class="icon-filter" src="./assets/images/race_unknown.png">
+                                <input type="checkbox" (click)="filterBy('unknown', 'race')">
+                                <span class="race-name">Unknown</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
         </div>
     
     </div>

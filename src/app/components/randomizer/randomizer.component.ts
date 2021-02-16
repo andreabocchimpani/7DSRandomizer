@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from 'src/services/character.service';
+import { Observable } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-randomizer',
@@ -8,13 +11,19 @@ import { CharacterService } from 'src/services/character.service';
 })
 export class RandomizerComponent implements OnInit {
 
+  isHandset: Observable<boolean> = this.breakpointObserver
+  .observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
+
   public characters: any;
   public isCharacterSelected: any
   public squad: any;
   public filteredCharacters: any[];
   public filters: any;
 
-  constructor(private characterservice: CharacterService) { 
+  constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) { 
     this.filteredCharacters = [];
     this.filters = {};
   }

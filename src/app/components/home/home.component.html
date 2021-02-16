@@ -1,9 +1,27 @@
+<!-- <diV class="home-container">
+    <div class="header-section">
+        <img *ngIf="!(isHandset | async)" class="header-image" src="./assets/images/logo-7ds2.png">
+        <img *ngIf="(isHandset | async)" class="mobile-header" src="./assets/images/all-seven.jpg">
+    </div>
+    <div class="button-container">
+        <button class="home-button" [routerLink]="['/randomizer']">Randomizer</button>
+        <button class="home-button" [routerLink]="['/character-list']">Characters List</button>
+    </div>
+</diV> -->
+
 <diV class="home-container">
     <div class="header-section">
         <img class="header-image" src="./assets/images/logo-7ds.png">
     </div>
     <div class="button-container">
-        <button class="home-button" [routerLink]="['/randomizer']">Randomizer</button>
-        <button class="home-button" [routerLink]="['/character-list']">Characters List</button>
+        <div class="random" [routerLink]="['/randomizer']">
+            RANDOMIZER
+        </div>
+        <div class="list" [routerLink]="['/character-list']">
+            CHARACTERS
+        </div>
+    </div>
+    <div class="footer-container">
+        Disclaimer: We are NOT affiliated with this game, this is a fan site dedicated to the game. Randomizer is not affiliated with or endorsed by Netmarble.
     </div>
 </diV>
