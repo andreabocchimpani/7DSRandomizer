@@ -1,9 +1,8 @@
 <div class="randomizer-container">
-    <div class="button-container">
+    <div>
         <button type="button" class="home-icon"> 
             <img [routerLink]="['/home']" class="mama-hawk-icon" src="./assets/images/icon_boarhat.png">
         </button>
-        <!-- <img style="width: 200px;" src="./assets/images/Hawk.png"> -->
     </div>
 
     <div class="filter-section">
@@ -63,7 +62,7 @@
                             <label class="container">
                                 <img class="icon-filter" src="./assets/images/race_goddess.png">
                                 <input type="checkbox" (click)="filterBy('goddess', 'race')">
-                                <span class="race-name">Goddes</span>
+                                <span class="race-name">Goddess</span>
                             </label>
                             <label class="container">
                                 <img class="icon-filter" src="./assets/images/race_unknown.png">
@@ -94,6 +93,16 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+
+        <div class="compact-button-container">
+            <span *ngIf="!isCompact">Extended Version</span>
+            <span *ngIf="isCompact">Compact Version</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round" (click)="changeView()"></span>
+            </label>
         </div>
     
         <div *ngIf="(isHandset | async)" class="filter-section">
@@ -209,7 +218,7 @@
                 <div *ngFor="let character of squad">
                     <div class="single-character">
                         <img src={{character.images}}>
-                        <span class="character-name">{{character.name}}</span>
+                <span *ngIf="!this.isCompact" class="character-name">{{character.name}}</span>
                     </div>
                 </div>
             </div>

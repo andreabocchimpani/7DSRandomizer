@@ -3,11 +3,6 @@
     height: 100vh;
 }
 
-// .button-container{
-//     display: flex;
-//     justify-content: space-between;
-// }
-
 .home-icon{
     background-color: transparent;
     border-color: transparent;
@@ -23,14 +18,13 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    // padding-top: 40px;
 }
 
 .filter-title{
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .filter-container{
@@ -124,8 +118,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 50px;
-    // padding-top: 30px;
+    padding-top: 15px;
 }
 
 .single-character-container{
@@ -179,7 +172,7 @@
     padding: 40px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 599px) {
     .squad-container {
     min-width: auto;
     }
@@ -202,4 +195,78 @@
 .grade-attribute-mobile{
     display: flex;
     justify-content: center;
+}
+
+.mama-hawk-icon{
+    height: 90px;
+}
+
+.compact-button-container{
+    color: white;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    margin-left: 10px;
+  }
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+  
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+ 
+input:checked + .slider {
+    background-color: #2C6E31;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2C6E31;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
 }

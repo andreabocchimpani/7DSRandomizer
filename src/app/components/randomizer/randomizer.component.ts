@@ -22,10 +22,12 @@ export class RandomizerComponent implements OnInit {
   public squad: any;
   public filteredCharacters: any[];
   public filters: any;
+  public isCompact: boolean;
 
   constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) { 
     this.filteredCharacters = [];
     this.filters = {};
+    this.isCompact = false;
   }
 
   ngOnInit(): void {
@@ -39,6 +41,12 @@ export class RandomizerComponent implements OnInit {
     })
   }
 
+  changeView(){
+    console.log('prima', this.isCompact)
+    this.isCompact = !this.isCompact;
+    console.log('dopo', this.isCompact)
+  }
+
   randomCharacter() {
     var selectedCharacter = this.filteredCharacters[Math.floor(Math.random() * this.filteredCharacters.length)];
     console.log('selected', selectedCharacter);
@@ -47,13 +55,14 @@ export class RandomizerComponent implements OnInit {
   
   getMoreRandom(arr, n) {
     this.squad = new Array(n);
+    console.log('squad', this.squad)
     var len = arr.length,
         taken = new Array(len);
     if (n > len)
         throw new RangeError("getRandom: more elements taken than available");
     while (n--) {
         var x = Math.floor(Math.random() * len);
-        this.squad[n] = arr[x in taken ? taken[x] : x];
+        this.squad[n] = arr[x in taken? taken[x] : x];
         taken[x] = --len in taken ? taken[len] : len;
     }
     return this.squad;
@@ -82,7 +91,6 @@ export class RandomizerComponent implements OnInit {
         }
       }
     }
-    console.log('charcathers filtrato', this.filteredCharacters)
   }
 
 }

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { map } from 'rxjs/operators';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +8,17 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  isHandset: Observable<boolean> = this.breakpointObserver
-  .observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches)
-  );
+  public now: Date;
+  public isNight: boolean;
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver) { 
+    this.isNight = false;
+  }
 
   ngOnInit(): void {
+    this.now = new Date();
+    this.isNight = this.now.getHours() > 18 ||  this.now.getHours() < 7? true : false;
+    // this.isNight = this.now.getHours() > 18? true : false;
   }
 
 }

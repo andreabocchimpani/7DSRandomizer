@@ -1,31 +1,94 @@
 .home-container{
-    // background-image: url("src/assets/images/logo-7ds-opacized.png");
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
-    // background-position: center center;
     display: flex;
     flex-direction: column;
 }
 
 .header-section{
     width: 100%;
-    text-align: center;
     height: 35vh;
+    background-image: url("src/assets/images/desktop-header-day.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+
+.header-section-night{
+    width: 100%;
+    height: 35vh;
+    background-image: url("src/assets/images/desktop-header-night.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
 }
 
 .header-image{
-    // width: 60%;
-    // height: 40vh;
-    height: 35vh;
-    width: 30vw;;
+    height: 55%;
+    width: 15%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    animation: pulse 1s linear infinite;
 }
 
-@media screen and (max-width: 500px) {
-    .header-image{
-        height: 40vh;
-        width: 80vw;
+@keyframes pulse {
+    0% {
+     transform: scale(1, 1);
     }
+
+    50% {
+     transform: scale(1.1, 1.1);
+    }
+
+    100% {
+    transform: scale(1, 1);
+    }
+}
+.header-image:hover{
+    transform: scale(1.03); 
+}
+
+@media screen and (min-width: 600px) and (max-width: 1199px){
+
+    .header-image{
+        height: 45%;
+        width: 18%;
+    }
+
+    .header-image:hover{
+        transform: scale(1.03); 
+    }
+}
+
+@media screen and (max-width: 599px) {
+
+    .header-section{
+        background-image: url("src/assets/images/mobile-header-day.jpg");
+    }
+
+    .header-section-night{
+        background-image: url("src/assets/images/mobile-header-night.jpg");
+    }
+
+    .header-image{
+        height: 30%;
+        width: 35%;
+    }
+
+    .seven-disclaimer{
+        font-size: xx-small !important;
+    }
+
+    .font-disclaimer{
+        font-size: xx-small !important;
+    }
+
+    .footer-container{
+        height: 8vh;
+    }
+    
 }
 
 .mobile-header{
@@ -42,6 +105,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 1000;
 }
 
 .home-button{
@@ -52,25 +116,24 @@
     border-radius: 8px;
     margin-top: 20px;
     cursor: pointer;
-    // color: #F35C27;
-    // border: solid 2px black;
 }
 
 .random{
     width: 100vw;
     height: 30vh;
-    background-image: url("src/assets/images/meliodasvszeldris-opacized.jpg");
+    background-image: url("src/assets/images/meliodasvszeldris-opacized.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     color: black;
     text-align: center;
     font-size: 50px;
-    // text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-    //              0px 8px 13px rgba(0,0,0,0.1),
-    //              0px 18px 23px rgba(0,0,0,0.4);
+    text-shadow: #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px,
+                 #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px;
     line-height: 30vh;
     cursor: pointer;
+    font-family: 'BoisterBlack';
+    color: white;
 }
 
 .random:hover{
@@ -80,28 +143,104 @@
 .list{
     width: 100vw;
     height: 30vh;
-    background-image: url("src/assets/images/all-sins-opacized.jpg");
+    background-image: url("src/assets/images/all-sins.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     color: black;
     text-align: center;
     font-size: 50px;
-    // text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-    //              0px 8px 13px rgba(0,0,0,0.1),
-    //              0px 18px 23px rgba(0,0,0,0.4);
+    text-shadow: #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px,
+                 #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px;
     line-height: 30vh;
     cursor: pointer;
+    font-family: 'BoisterBlack';
+    color: white;
 }
 
 .list:hover{
     transform: scale(1.03); 
 }
 
+.seven-disclaimer{
+    font-size: small;
+}
+
+.font-disclaimer{
+    font-size: small;
+}
+
+.font-disclaimer a:link, a:visited, a:active, a:hover{
+    color: white;
+    text-decoration: none;
+}
+
 .footer-container{
     color: white;
     height: 5vh;
-    line-height: 5vh;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+.disclaimer-container{
+    text-align: center;
+    line-height: 2vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+// .button-container2{
+//     height: 94vh;
+// }
+
+// .random2{
+//     width: 100vw;
+//     height: 47vh;
+//     background-image: url("src/assets/images/meliodasvszeldris-opacized.png");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     color: black;
+//     text-align: center;
+//     font-size: 50px;
+//     text-shadow: #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px,
+//                  #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px;
+//     line-height: 30vh;
+//     cursor: pointer;
+//     font-family: 'BoisterBlack';
+//     color: white;
+// }
+
+// .list2{
+//     width: 100vw;
+//     height: 47vh;
+//     background-image: url("src/assets/images/all-sins-opacized.jpg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     color: black;
+//     text-align: center;
+//     font-size: 50px;
+//     text-shadow: #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px,
+//                  #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px;
+//     line-height: 30vh;
+//     cursor: pointer;
+//     font-family: 'BoisterBlack';
+//     color: white;
+// }
+
+// .footer-container2{
+//     color: white;
+//     height: 6vh;
+// }
+
+// .disclaimer-container2{
+//     text-align: center;
+//     line-height: 2vh;
+// }

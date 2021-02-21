@@ -1,27 +1,52 @@
-<!-- <diV class="home-container">
-    <div class="header-section">
-        <img *ngIf="!(isHandset | async)" class="header-image" src="./assets/images/logo-7ds2.png">
-        <img *ngIf="(isHandset | async)" class="mobile-header" src="./assets/images/all-seven.jpg">
-    </div>
-    <div class="button-container">
-        <button class="home-button" [routerLink]="['/randomizer']">Randomizer</button>
-        <button class="home-button" [routerLink]="['/character-list']">Characters List</button>
-    </div>
-</diV> -->
-
 <diV class="home-container">
-    <div class="header-section">
-        <img class="header-image" src="./assets/images/logo-7ds.png">
+
+    <div [ngClass]="(isNight==true)?'header-section-night':'header-section'" >
+        <img class="header-image" [routerLink]="['/contacts']" src="./assets/images/contacts.jpg">
+        <!-- <img class="header-image" [routerLink]="['/contacts']" src="./assets/images/hawk-dorme.jpg"> -->
     </div>
     <div class="button-container">
         <div class="random" [routerLink]="['/randomizer']">
-            RANDOMIZER
+            Randomizer
         </div>
         <div class="list" [routerLink]="['/character-list']">
-            CHARACTERS
+            Characters
         </div>
     </div>
     <div class="footer-container">
-        Disclaimer: We are NOT affiliated with this game, this is a fan site dedicated to the game. Randomizer is not affiliated with or endorsed by Netmarble.
+        <div class="disclaimer-container">
+            <p class="seven-disclaimer">
+                Disclaimer: We are NOT affiliated with this game, this is a fan site dedicated to the game. Randomizer is not affiliated with or endorsed by Netmarble.
+            </p>
+            <p class="font-disclaimer">
+                Font made from <a href="http://www.onlinewebfonts.com" target="_blank">oNline Web Fonts</a> is licensed by CC BY 3.0
+            </p>
+        </div>
     </div>
+    
 </diV>
+
+
+
+
+<!-- <diV class="home-container">
+
+    <div class="button-container2">
+        <div class="random2" [routerLink]="['/randomizer']">
+            Randomizer
+        </div>
+        <div class="list2" [routerLink]="['/character-list']">
+            Characters
+        </div>
+    </div>
+    <div class="footer-container2">
+        <div class="disclaimer-container2">
+            <p class="seven-disclaimer">
+                Disclaimer: We are NOT affiliated with this game, this is a fan site dedicated to the game. Randomizer is not affiliated with or endorsed by Netmarble.
+            </p>
+            <p class="font-disclaimer">
+                Font made from <a href="http://www.onlinewebfonts.com" target="_blank">oNline Web Fonts</a> is licensed by CC BY 3.0
+            </p>
+        </div>
+    </div>
+    
+</diV> -->

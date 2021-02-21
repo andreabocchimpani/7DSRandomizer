@@ -1,18 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
-// @font-face {
-//     font-family: "BoisterB";
-//     src: local("BoisterB"), url("/assets/fonts/Boisterb.ttf") format("truetype");
-// }
+@font-face {font-family: "BoisterBlack";
+	src: url("/assets/font/BoisterBlack/@font-face/85ed127b29ced90900da1071e6b57e94.eot"); /* IE9*/
+	src: url("/assets/font/BoisterBlack/@font-face/85ed127b29ced90900da1071e6b57e94.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	// url("/assets/font/BoisterBlack/@font-face/85ed127b29ced90900da1071e6b57e94.woff2") format("woff2"), /* chrome、firefox */
+	url("/assets/font/BoisterBlack/@font-face/85ed127b29ced90900da1071e6b57e94.woff") format("woff"), /* chrome、firefox */
+	url("/assets/font/BoisterBlack/@font-face/85ed127b29ced90900da1071e6b57e94.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url("/assets/font/BoisterBlack/@font-face/85ed127b29ced90900da1071e6b57e94.svg#BoisterBlack") format("svg"); /* iOS 4.1- */
+  }
 
-@font-face {
-    font-family:"BoisterBlack";
-    src: url("/assets/fonts/Boisterb.ttf") format("truetype");
-    font-weight:normal;
-    font-style:normal;
-}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -57,11 +55,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-html, body { height: 100vh; background-color: #151515; }
+html, body { background-color: #151515; }
 body {
+	height: 100vh; 
 	margin: 0; 
 	padding: 0; 
-	// font-family: 'Raleway', sans-serif;
+	font-family: 'Jost', sans-serif;
 	overflow-x: hidden;
-	font-family: 'BoisterBlack';
 }
