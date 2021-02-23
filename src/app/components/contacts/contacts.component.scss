@@ -72,10 +72,61 @@
 
     .contacts-container{
         background-image: url("src/assets/images/phone_bacheca.jpg");
-        // background-size: cover;
     }
 
     .mama-hawk-icon{
         height: 80px;
     }
+
+    .first-posters{
+        margin-top: 30px;
+    }
+    
+    .second-posters{
+        height: 100px;
+        text-align: center;
+    }
+    
+    .third-posters{
+        height: 100px;
+        text-align: center;
+    }
+
+    .fourth-posters{
+        height: 120px;
+        text-align: center;
+    }
+    
+    .discord{
+        height: 90px;
+        margin-right: 50px;
+    }
+    
+    .github{
+        height: 90px;
+        margin-left: 0px;
+        margin-right: 80px;
+        margin-top: 65px;
+    }
+    
+    .twitch{
+        height: 90px;
+        margin-left: 170px;
+        margin-top: 30px;
+    }
+    
+    .youtube{
+        height: 90px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-right: 170px;
+    }
+    
+    .mail{
+        height: 90px;
+        margin-left: 40px;
+        margin-top: -10px;
+    }
+
+
 }

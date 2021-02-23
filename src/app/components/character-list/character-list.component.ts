@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class CharacterListComponent implements OnInit {
 
   isHandset: Observable<boolean> = this.breakpointObserver
-  .observe(Breakpoints.Handset)
+  .observe(Breakpoints.HandsetPortrait)
   .pipe(
     map(result => result.matches)
   );

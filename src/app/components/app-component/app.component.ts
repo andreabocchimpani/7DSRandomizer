@@ -11,7 +11,9 @@ export class AppComponent implements OnInit{
 
   title = 'Randomizer';
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) { 
+    // localStorage.clear();
+  }
 
   ngOnInit(): void {
   }

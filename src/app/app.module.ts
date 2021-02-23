@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { RandomizerComponent } from './components/randomizer/randomizer.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { ContactsComponent } from './components/contacts/contacts.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
