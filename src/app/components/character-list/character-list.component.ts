@@ -26,6 +26,7 @@ export class CharacterListComponent implements OnInit {
   public filters: any;
   public searchString: string;
   public isCompact: boolean;
+  public isLight: boolean;
 
   constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) {
     this.filteredCharacters = [];
@@ -34,7 +35,8 @@ export class CharacterListComponent implements OnInit {
     this.filterAttribute = [];
     this.filters = {};
     this.searchString = '';
-    this.isCompact = false;
+    this.isCompact = localStorage.getItem('isCompact') === 'true'? true : false;
+    this.isLight = localStorage.getItem('isLight') === 'true'? true : false;
    }
 
   ngOnInit(): void {
@@ -57,7 +59,6 @@ export class CharacterListComponent implements OnInit {
     } else {
       this.filters[type].push(value)
     }
-    console.log('filtergrade', this.filters[type])
     this.filterCharacters();
   }
 
@@ -71,69 +72,21 @@ export class CharacterListComponent implements OnInit {
         }
       }
     }
-    console.log('charcathers filtrato', this.filteredCharacters)
   }
 
   changeView(){
     this.isCompact = !this.isCompact;
+    localStorage.setItem('isCompact', this.isCompact + '');
   }
+
+  changeTheme(){
+    this.isLight = !this.isLight;
+    localStorage.setItem('isLight', this.isLight + '');
+  }
+
 
   toTopPage(){
     window.scrollTo(0,0);
   }
-
-  // filterByGrade(grade: any){
-  //   if (!this.filters.grade) {
-  //     this.filters.grade = [];
-  //   }
-  //   if (this.filters.grade.includes(grade)){
-  //     this.filters.grade.splice(this.filters.grade.indexOf(grade), 1);
-  //   } else {
-  //     this.filters.grade.push(grade)
-  //   }
-  //   console.log('filtergrade', this.filters.grade)
-  //   this.filterCharacters();
-  // }
-
-  // filterByRace(race: any){
-  //   if (!this.filters.race) {
-  //     this.filters.race = [];
-  //   }
-  //   if (this.filters.race.includes(race)){
-  //     this.filters.race.splice(this.filters.race.indexOf(race), 1);
-  //   } else {
-  //     this.filters.race.push(race)
-  //   }
-  //   console.log('filterrace', this.filters.race)
-  //   this.filterCharacters();
-  // }
-
-  // filterByAttribute(attribute: any){
-  //   if (!this.filters.attribute) {
-  //     this.filters.attribute = [];
-  //   }
-  //   if (this.filters.attribute.includes(attribute)){
-  //     this.filters.attribute.splice(this.filters.attribute.indexOf(attribute), 1);
-  //   } else {
-  //     this.filters.attribute.push(attribute)
-  //   }
-  //   console.log('filterattribute', this.filters.attribute);
-  //   this.filterCharacters();
-  // }
-
-  // filterCharacters1(){
-  //   this.filteredCharacters = this.characters;
-  //   for (const key in this.filters) {
-  //     if (Object.prototype.hasOwnProperty.call(this.filters, key)) {
-  //       let filtered = [];
-  //       const filters = this.filters[key];
-  //       filters.forEach(f => {
-  //         filtered = this.characters.filter(c => c[key] === f);
-  //         this.filteredCharacters.push(filtered);
-  //       })
-  //     }
-  //   }
-  // }
-
 
 }

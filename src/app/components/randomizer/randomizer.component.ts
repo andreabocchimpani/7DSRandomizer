@@ -3,8 +3,6 @@ import { CharacterService } from 'src/services/character.service';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
-import { FormControl } from '@angular/forms';
-import { ThemeService } from 'src/services/theme.service';
 
 
 @Component({
@@ -20,8 +18,6 @@ export class RandomizerComponent implements OnInit {
     map(result => result.matches)
   );
 
-  darkTheme =  new FormControl(false);
-
   public characters: any;
   public isCharacterSelected: any
   public squad: any;
@@ -31,21 +27,11 @@ export class RandomizerComponent implements OnInit {
   public isLight: boolean;
 
 
-  constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver, private themeService: ThemeService) { 
+  constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) { 
     this.filteredCharacters = [];
     this.filters = {};
-    this.isCompact = false;
-    this.isLight = false;
-
-    // if (localStorage.getItem('extendedVersion') === 'false') {
-    //   console.log('sono qua vero')
-    //   this.isCompact = true;
-    // } else {
-    //   console.log('sono qua falso')
-    //   this.isCompact = false;
-    // }
-
-    console.log('local', localStorage)
+    this.isCompact = localStorage.getItem('isCompact') === 'true'? true : false;
+    this.isLight = localStorage.getItem('isLight') === 'true'? true : false;
   }
 
   ngOnInit(): void {
@@ -60,23 +46,17 @@ export class RandomizerComponent implements OnInit {
   }
 
   changeTheme(){
-    this.isLight = !this.isLight
+    this.isLight = !this.isLight;
+    localStorage.setItem('isLight', this.isLight + '');
   }
 
   changeView(){
-    if (localStorage.getItem('extendedVersion') === 'false') {
-      localStorage.setItem('extendedVersion', 'true');
-      console.log('local nel change - true', localStorage)
-    } else {
-      localStorage.setItem('extendedVersion', 'false'); 
-      console.log('local nel change - false', localStorage)   
-    }
     this.isCompact = !this.isCompact;
+    localStorage.setItem('isCompact', this.isCompact + '');
   }
 
   randomCharacter() {
     var selectedCharacter = this.filteredCharacters[Math.floor(Math.random() * this.filteredCharacters.length)];
-    console.log('selected', selectedCharacter);
     this.isCharacterSelected = selectedCharacter;
   }
   
@@ -102,7 +82,6 @@ export class RandomizerComponent implements OnInit {
     } else {
       this.filters[type].push(value)
     }
-    console.log('filter', this.filters[type])
     this.filterCharacters();
   }
 

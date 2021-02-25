@@ -1,19 +1,15 @@
-:host {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-}
-
 .randomizer-container{
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     // color: white;
-}  
+    background-color: #151515;
+}
 
 .randomizer-container-day{
     background-color: #FAFAFA;
     width: 100%;
-    height: 100%;
-  }
+    min-height: 100vh;
+}
 
 .home-icon{
     background-color: transparent;
@@ -30,6 +26,17 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.filter-section-day{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    // color: white;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #151515;
 }
 
 .filter-title{
@@ -55,8 +62,21 @@
     margin: 16px;
 }
 
+.filter-grade-day{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px #404040, 0 4px 12px #404040;
+    padding: 10px;
+    margin: 16px;
+}
+
 .filter-grade:hover{
     box-shadow: 0 5px 15px #606060, 0 4px 12px #606060;
+}
+
+.filter-grade-day:hover{
+    box-shadow: 0 5px 15px #151515, 0 4px 12px #151515;
 }
 
 .filter-race{
@@ -70,8 +90,22 @@
     min-width: 280px
 }
 
+.filter-race-day{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px #404040, 0 4px 12px #404040;
+    padding: 10px;
+    margin: 16px;
+    min-width: 280px
+}
+
 .filter-race:hover{
     box-shadow: 0 5px 15px #606060, 0 4px 12px #606060;
+}
+
+.filter-race-day:hover{
+    box-shadow: 0 5px 15px #151515, 0 4px 12px #151515;
 }
 
 .filter-attribute{
@@ -82,8 +116,19 @@
     margin: 16px;
 }
 
+.filter-attribute-day{
+    border-radius: 8px;
+    box-shadow: 0 5px 15px #404040, 0 4px 12px #404040;
+    padding: 10px;
+    margin: 16px;
+}
+
 .filter-attribute:hover{
     box-shadow: 0 5px 15px #606060, 0 4px 12px #606060;
+}
+
+.filter-attribute-day:hover{
+    box-shadow: 0 5px 15px #151515, 0 4px 12px #151515;
 }
 
 .single-section-filter{
@@ -141,11 +186,31 @@
 
 .random-button{
     height: 40px;
-    background: white;
+    background: #252525;
+    color: white;
     border-style: none;
     border-radius: 8px;
     max-width: 200px;
     align-self: center;
+    box-shadow: 0 5px 15px #404040, 0 4px 12px #404040;
+}
+
+.random-button:hover{
+    box-shadow: 0 5px 15px #606060, 0 4px 12px #606060;
+}
+
+.random-button-day{
+    height: 40px;
+    color: black;
+    border-style: none;
+    border-radius: 8px;
+    max-width: 200px;
+    align-self: center;
+    box-shadow: 0 5px 15px #404040, 0 4px 12px #404040;
+}
+
+.random-button-day:hover{
+    box-shadow: 0 5px 15px #151515, 0 4px 12px #151515;
 }
 
 .no-character{

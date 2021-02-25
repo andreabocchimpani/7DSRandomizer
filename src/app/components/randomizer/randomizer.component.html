@@ -1,19 +1,16 @@
-<div class="randomizer-container">
-<!-- <div [ngClass]="(this.isLight)?'randomizer-container-day':'randomizer-container'"> -->
+<!-- <div class="randomizer-container"> -->
+<div [ngClass]="(this.isLight)?'randomizer-container-day':'randomizer-container'">
     <div>
         <button type="button" class="home-icon"> 
             <img [routerLink]="['/home']" class="mama-hawk-icon" src="./assets/images/icon_boarhat.png">
         </button>
 
-        <label for="darkTheme">Dark Theme</label>
-        <input id="darkTheme" type="checkbox" [formControl]="darkTheme">
-
-        <!-- <div class="button-con">
+        <div class="button-con">
             <label for='cb1'>
                   <img src="./assets/images/moon.svg" (click)="changeTheme()" id="nightIcon">
             </label>
-            <input class='toggle' id='cb1' type='checkbox'>
-            <label class='toggle-button' (click)="changeTheme()" for='cb1'></label>
+            <input class='toggle' id='cb1' type='checkbox' (click)="changeTheme()" [checked]="isLight">
+            <label class='toggle-button' for='cb1'></label>
             <label for='cb1'>
               <svg (click)="changeTheme()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
                 <g id="Sun">
@@ -23,18 +20,18 @@
                 </g>
               </svg>
             </label>
-        </div> -->
+        </div>
 
     </div>
 
-    <div class="filter-section">
+    <div [ngClass]="(this.isLight)?'filter-section-day':'filter-section'">
         <div class="filter-title">
             Filters
         </div>
     
         <div *ngIf="!(isHandset | async)" class="filter-container">
     
-            <div class="filter-grade">
+            <div [ngClass]="(this.isLight)?'filter-grade-day':'filter-grade'">
                 <div class="single-section-filter">
                     <div class="icon-title">Grade</div>
                     <div class="icon-container">
@@ -54,7 +51,7 @@
                 </div>
             </div>
     
-            <div class="filter-race">
+            <div [ngClass]="(this.isLight)?'filter-race-day':'filter-race'">
                 <div class="single-section-filter">
                     <div class="icon-title">Race</div>
                     <div>
@@ -96,7 +93,7 @@
                 </div>
             </div>
     
-            <div class="filter-attribute">
+            <div [ngClass]="(this.isLight)?'filter-attribute-day':'filter-attribute'">
                 <div class="single-section-filter">
                     <div class="icon-title">Attribute</div>
                     <div class="icon-container">
@@ -119,18 +116,17 @@
         </div>
 
         <div class="compact-button-container">
-            <span *ngIf="!isCompact">Extended Version</span>
-            <span *ngIf="isCompact">Compact Version</span>
+            <span>Compact Version</span>
             <label class="switch">
-                <input type="checkbox">
-                <span class="slider round" (click)="changeView()"></span>
+                <input type="checkbox" (click)="changeView()" [checked]="isCompact">
+                <span class="slider round"></span>
             </label>
         </div>
     
         <div *ngIf="(isHandset | async)" class="filter-section">
     
             <div class="grade-attribute-mobile">
-                <div class="filter-grade">
+                <div [ngClass]="(this.isLight)?'filter-grade-day':'filter-grade'">
                     <div class="single-section-filter">
                         <div class="icon-title">Grade</div>
                         <div class="icon-container">
@@ -150,7 +146,7 @@
                     </div>
                 </div>
     
-                <div class="filter-attribute">
+                <div [ngClass]="(this.isLight)?'filter-attribute-day':'filter-attribute'">
                     <div class="single-section-filter">
                         <div class="icon-title">Attribute</div>
                         <div class="icon-container">
@@ -171,7 +167,7 @@
                 </div>
             </div>
     
-            <div class="filter-race">
+            <div [ngClass]="(this.isLight)?'filter-race-day':'filter-race'">
                 <div class="single-section-filter">
                     <div class="icon-title">Race</div>
                     <div>
@@ -219,17 +215,17 @@
 
     <div class="random-container">
         <div class="single-character-container">
-            <button class="random-button" (click)="randomCharacter()">Select a character</button>
+            <button [ngClass]="(this.isLight)?'random-button-day':'random-button'" (click)="randomCharacter()">Select character</button>
             <div class="no-character" *ngIf="!this.isCharacterSelected"></div>
             <div *ngIf="this.isCharacterSelected">
                 <div class="single-character">
                     <img src={{this.isCharacterSelected.images}}>
-                    <span class="character-name">{{this.isCharacterSelected.name}}</span>
+                    <span *ngIf="!this.isCompact" class="character-name">{{this.isCharacterSelected.name}}</span>
                 </div>
             </div>
         </div>
         <div class="squad-container">
-            <button class="random-button" (click)="getMoreRandom(this.filteredCharacters, 4)">Select a squad</button>
+            <button [ngClass]="(this.isLight)?'random-button-day':'random-button'" (click)="getMoreRandom(this.filteredCharacters, 4)">Select squad</button>
             <div class="nosquad" *ngIf="!this.squad">
                 <div class="no-character"></div>
                 <div class="no-character"></div>
