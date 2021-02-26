@@ -225,7 +225,7 @@
             </div>
         </div>
         <div class="squad-container">
-            <button [ngClass]="(this.isLight)?'random-button-day':'random-button'" (click)="getMoreRandom(this.filteredCharacters, 4)">Select squad</button>
+            <button [ngClass]="(isLight)?'random-button-day':'random-button'" (click)="getMoreRandom(this.filteredCharacters, 4)">Select squad</button>
             <div class="nosquad" *ngIf="!this.squad">
                 <div class="no-character"></div>
                 <div class="no-character"></div>
@@ -236,7 +236,9 @@
                 <div *ngFor="let character of squad">
                     <div class="single-character">
                         <img src={{character.images}}>
-                <span *ngIf="!this.isCompact" class="character-name">{{character.name}}</span>
+                        <span *ngIf="!this.isCompact" class="character-name">{{character.name}}</span>
+                        <img class="update-icon" *ngIf="!isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-white.svg">
+                        <img class="update-icon" *ngIf="isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-black.svg">
                     </div>
                 </div>
             </div>

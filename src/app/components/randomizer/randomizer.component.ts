@@ -13,10 +13,10 @@ import { map } from 'rxjs/operators';
 export class RandomizerComponent implements OnInit {
 
   isHandset: Observable<boolean> = this.breakpointObserver
-  .observe(Breakpoints.HandsetPortrait)
-  .pipe(
-    map(result => result.matches)
-  );
+    .observe(Breakpoints.HandsetPortrait)
+    .pipe(
+      map(result => result.matches)
+    );
 
   public characters: any;
   public isCharacterSelected: any
@@ -27,57 +27,62 @@ export class RandomizerComponent implements OnInit {
   public isLight: boolean;
 
 
-  constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) { 
+  constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) {
     this.filteredCharacters = [];
     this.filters = {};
-    this.isCompact = localStorage.getItem('isCompact') === 'true'? true : false;
-    this.isLight = localStorage.getItem('isLight') === 'true'? true : false;
+    this.isCompact = localStorage.getItem('isCompact') === 'true' ? true : false;
+    this.isLight = localStorage.getItem('isLight') === 'true' ? true : false;
   }
 
   ngOnInit(): void {
     this.initCharacterList();
   }
 
-  initCharacterList(){
+  initCharacterList() {
     this.characterservice.getCharacter().subscribe(c => {
       this.characters = c;
       this.filteredCharacters = c;
     })
   }
 
-  changeTheme(){
+  changeTheme() {
     this.isLight = !this.isLight;
     localStorage.setItem('isLight', this.isLight + '');
   }
 
-  changeView(){
+  changeView() {
     this.isCompact = !this.isCompact;
     localStorage.setItem('isCompact', this.isCompact + '');
+  }
+
+  changeCharacter(character: any) {
+    var selectedCharacter = this.filteredCharacters[Math.floor(Math.random() * this.filteredCharacters.length)];
+    this.squad.splice(this.squad.indexOf(character), 1, selectedCharacter);
   }
 
   randomCharacter() {
     var selectedCharacter = this.filteredCharacters[Math.floor(Math.random() * this.filteredCharacters.length)];
     this.isCharacterSelected = selectedCharacter;
   }
-  
+
   getMoreRandom(arr, n) {
     const tempArray = [...arr];
     this.squad = [];
-    while(this.squad.length !==n) {
+    while (this.squad.length !== n) {
       const index = Math.floor(Math.random() * tempArray.length);
       const selectedCharacter = tempArray[index];
       if (this.squad.filter(c => c.name.includes(selectedCharacter.name[0])).length === 0) {
         this.squad.push(tempArray[index]);
-        tempArray.splice(index, 1);        
+        tempArray.splice(index, 1);
       }
     }
   }
 
-  filterBy(value: any, type: string){
+  filterBy(value: any, type: string) {
     if (!this.filters[type]) {
       this.filters[type] = [];
     }
-    if (this.filters[type].includes(value)){
+    if (this.filters[type].includes(value)) {
       this.filters[type].splice(this.filters[type].indexOf(value), 1);
     } else {
       this.filters[type].push(value)
@@ -85,7 +90,7 @@ export class RandomizerComponent implements OnInit {
     this.filterCharacters();
   }
 
-  filterCharacters(){
+  filterCharacters() {
     this.filteredCharacters = this.characters;
     for (const key in this.filters) {
       if (Object.prototype.hasOwnProperty.call(this.filters, key)) {
