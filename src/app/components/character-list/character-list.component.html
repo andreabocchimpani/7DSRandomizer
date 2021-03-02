@@ -26,9 +26,13 @@
     <div [ngClass]="(this.isLight)?'filter-section-day':'filter-section'">
         <div class="filter-title">
             Filters
+            <img class="filter-icon" *ngIf="!isLight && isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-down-white.svg">
+            <img class="filter-icon" *ngIf="isLight && isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-down-black.svg">
+            <img class="filter-icon" *ngIf="!isLight && !isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-up-white.svg">
+            <img class="filter-icon" *ngIf="isLight && !isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-up-black.svg">
         </div>
 
-        <div *ngIf="!(isHandset | async)" class="filter-container">
+        <div *ngIf="!(isHandset | async) && !isFilterClosed" class="filter-container">
 
             <div [ngClass]="(this.isLight)?'filter-grade-day':'filter-grade'">
                 <div class="single-section-filter">
@@ -113,7 +117,7 @@
             </div>
         </div>
 
-        <div *ngIf="(isHandset | async)" class="filter-section">
+        <div *ngIf="(isHandset | async) && !isFilterClosed" class="filter-section">
 
             <div class="grade-attribute-mobile">
                 <div [ngClass]="(this.isLight)?'filter-grade-day':'filter-grade'">
@@ -214,8 +218,8 @@
         <div class="characters-list">
             <div *ngFor="let character of filteredCharacters">
                 <div class="single-character">
-                    <img class="character-image" src={{character.images}}>
-                    <span *ngIf="!this.isCompact" [ngClass]="(this.isLight)?'character-name-day':'character-name'">{{character.name}}</span>
+                    <img class="character-image" title="{{character.name}}" src={{character.images}}>
+                    <span *ngIf="!isCompact" [ngClass]="(this.isLight)?'character-name-day':'character-name'">{{character.name}}</span>
                 </div>
             </div>
         </div>

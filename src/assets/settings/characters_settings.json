@@ -126,6 +126,13 @@
         "attribute": "hp"
     },
     {
+        "name": "Denzel Captain [The Pleiades of the Azure Sky]",
+        "images": "./assets/images/[The Pleiades of the Azure Sky] Captain Denzel.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "hp"
+    },
+    {
         "name": "Deldry Holy Knight [The Pleiades of the Azure Sky]",
         "images": "./assets/images/[The Pleiades of the Azure Sky] Holy Knight Deldry.png",
         "grade": "ssr",
@@ -142,6 +149,13 @@
     {
         "name": "Derieri of Purity [Elite Demon]",
         "images": "./assets/images/[Elite Demon] Derieri of Purity.png",
+        "grade": "ssr",
+        "race": "demon",
+        "attribute": "hp"
+    },
+    {
+        "name": "Derieri of Purity [Sweet Temptation]",
+        "images": "./assets/images/[Sweet Temptation] Derieri of Purity.png",
         "grade": "ssr",
         "race": "demon",
         "attribute": "hp"
@@ -233,6 +247,20 @@
     {
         "name": "Eastin Noblesse [Ruler of Stormy Seas]",
         "images": "./assets/images/[Ruler of Stormy Seas] Noblesse Eastin.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "speed"
+    },
+    {
+        "name": "Eastin Noblesse [Sunny Vacation]",
+        "images": "./assets/images/[Sunny Vacation] Noblesse Eastin.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "speed"
+    },
+    {
+        "name": "Eastin Noblesse [Tuner of Blue Sea]",
+        "images": "./assets/images/[Tuner of Blue Sea] Noblesse Eastin.png",
         "grade": "ssr",
         "race": "human",
         "attribute": "speed"
@@ -763,6 +791,13 @@
         "attribute": "speed"
     },
     {
+        "name": "Liz Knight of Danafor [Memory Fragment]",
+        "images": "./assets/images/[Memory Fragment] Knight of Danafor Liz.png",
+        "grade": "ssr",
+        "race": "goddess",
+        "attribute": "speed"
+    },
+    {
         "name": "Mai Shiranui [KOF '98]",
         "images": "./assets/images/[KOF '98] Shiranui Mai.png",
         "grade": "ssr",
@@ -796,6 +831,13 @@
         "grade": "ssr",
         "race": "demon",
         "attribute": "speed"
+    },
+    {
+        "name": "Meliodas Berserk [Assault Mode]",
+        "images": "./assets/images/[Assault Mode] Berserk Meliodas.png",
+        "grade": "ssr",
+        "race": "demon",
+        "attribute": "hp"
     },
     {
         "name": "Meliodas Captain [The Seven Deadly Sins]",
@@ -854,6 +896,13 @@
         "attribute": "hp"
     },
     {
+        "name": "Merlin Daughter of Belialuin [Blessings of Gods]",
+        "images": "./assets/images/[Blessings of Gods] Daughter of Belialuin Merlin.png",
+        "grade": "ssr",
+        "race": "unknown",
+        "attribute": "hp"
+    },
+    {
         "name": "Merlin Great Mage [Infinity]",
         "images": "./assets/images/[Infinity] Great Mage Merlin.png",
         "grade": "ssr",
@@ -890,6 +939,13 @@
         "attribute": "strength"
     },
     {
+        "name": "Mono Human Weapon [Advent of Destruction]",
+        "images": "./assets/images/[Advent of Destruction] Human Weapon Mono.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "strength"
+    },
+    {
         "name": "Monspeet of Reticence [The Ten Commandments]",
         "images": "./assets/images/[The Ten Commandments] Monspeet of Reticence.png",
         "grade": "ssr",
@@ -899,6 +955,13 @@
     {
         "name": "Monspeet of Reticence [Elite Demon]",
         "images": "./assets/images/[Elite Demon] Monspeet of Reticence.png",
+        "grade": "ssr",
+        "race": "demon",
+        "attribute": "hp"
+    },
+    {
+        "name": "Nanashi Foreign Swordsman [Swift Sword]",
+        "images": "./assets/images/[Swift Sword] Foreign Swordsman Nanashi.png",
         "grade": "ssr",
         "race": "demon",
         "attribute": "hp"
@@ -1018,6 +1081,20 @@
     {
         "name": "Valenti Weapon Researcher [Earthshaker]",
         "images": "./assets/images/[Earthshaker] Weapon Researcher Valenti.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "hp"
+    },
+    {
+        "name": "Valenti of Obsession [Magic Weapon MK-II]",
+        "images": "./assets/images/[Magic Weapon MK-II] Valenti of Obsession.png",
+        "grade": "ssr",
+        "race": "human",
+        "attribute": "hp"
+    },
+    {
+        "name": "Valenti Weapon Researcher [Sunny Vacation]",
+        "images": "./assets/images/[Sunny Vacation] Weapon Researcher Valenti.png",
         "grade": "ssr",
         "race": "human",
         "attribute": "hp"

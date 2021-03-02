@@ -27,9 +27,13 @@
     <div [ngClass]="(this.isLight)?'filter-section-day':'filter-section'">
         <div class="filter-title">
             Filters
+            <img class="update-icon" *ngIf="!isLight && isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-down-white.svg">
+            <img class="update-icon" *ngIf="isLight && isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-down-black.svg">
+            <img class="update-icon" *ngIf="!isLight && !isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-up-white.svg">
+            <img class="update-icon" *ngIf="isLight && !isFilterClosed" (click)="openCloseFilter()" src="./assets/images/arrow-up-black.svg">
         </div>
     
-        <div *ngIf="!(isHandset | async)" class="filter-container">
+        <div *ngIf="!(isHandset | async) && !isFilterClosed" class="filter-container">
     
             <div [ngClass]="(this.isLight)?'filter-grade-day':'filter-grade'">
                 <div class="single-section-filter">
@@ -123,7 +127,7 @@
             </label>
         </div>
     
-        <div *ngIf="(isHandset | async)" class="filter-section">
+        <div *ngIf="(isHandset | async) && !isFilterClosed" class="filter-section">
     
             <div class="grade-attribute-mobile">
                 <div [ngClass]="(this.isLight)?'filter-grade-day':'filter-grade'">
@@ -215,28 +219,30 @@
 
     <div class="random-container">
         <div class="single-character-container">
-            <button [ngClass]="(this.isLight)?'random-button-day':'random-button'" (click)="randomCharacter()">Select character</button>
+            <button *ngIf="!isCharacterSelected" [ngClass]="(this.isLight)?'random-button-day':'random-button'" (click)="randomCharacter()">Select character</button>
+            <button *ngIf="isCharacterSelected" [ngClass]="(this.isLight)?'random-button-day':'random-button'" (click)="randomCharacter()">Change character</button>
             <div class="no-character" *ngIf="!this.isCharacterSelected"></div>
-            <div *ngIf="this.isCharacterSelected">
+            <div *ngIf="isCharacterSelected">
                 <div class="single-character">
-                    <img src={{this.isCharacterSelected.images}}>
-                    <span *ngIf="!this.isCompact" class="character-name">{{this.isCharacterSelected.name}}</span>
+                    <img src={{isCharacterSelected.images}}>
+                    <span *ngIf="!isCompact" class="character-name">{{this.isCharacterSelected.name}}</span>
                 </div>
             </div>
         </div>
         <div class="squad-container">
-            <button [ngClass]="(isLight)?'random-button-day':'random-button'" (click)="getMoreRandom(this.filteredCharacters, 4)">Select squad</button>
-            <div class="nosquad" *ngIf="!this.squad">
+            <button *ngIf="!squad" [ngClass]="(isLight)?'random-button-day':'random-button'" (click)="getMoreRandom(this.filteredCharacters, 4)">Select squad</button>
+            <button *ngIf="squad" [ngClass]="(isLight)?'random-button-day':'random-button'" (click)="getMoreRandom(this.filteredCharacters, 4)">Change squad</button>
+            <div class="nosquad" *ngIf="!squad">
                 <div class="no-character"></div>
                 <div class="no-character"></div>
                 <div class="no-character"></div>
                 <div class="no-character"></div>
             </div>
-            <div *ngIf="this.squad" class="squad">
+            <div *ngIf="squad" class="squad">
                 <div *ngFor="let character of squad">
                     <div class="single-character">
                         <img src={{character.images}}>
-                        <span *ngIf="!this.isCompact" class="character-name">{{character.name}}</span>
+                        <span *ngIf="!isCompact" [ngClass]="(isLight)?'character-name-day':'character-name'">{{character.name}}</span>
                         <img class="update-icon" *ngIf="!isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-white.svg">
                         <img class="update-icon" *ngIf="isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-black.svg">
                     </div>

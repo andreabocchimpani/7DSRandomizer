@@ -27,6 +27,7 @@ export class CharacterListComponent implements OnInit {
   public searchString: string;
   public isCompact: boolean;
   public isLight: boolean;
+  public isFilterClosed: boolean;
 
   constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) {
     this.filteredCharacters = [];
@@ -37,6 +38,7 @@ export class CharacterListComponent implements OnInit {
     this.searchString = '';
     this.isCompact = localStorage.getItem('isCompact') === 'true'? true : false;
     this.isLight = localStorage.getItem('isLight') === 'true'? true : false;
+    this.isFilterClosed = false;
    }
 
   ngOnInit(): void {
@@ -48,6 +50,10 @@ export class CharacterListComponent implements OnInit {
       this.characters = c;
       this.filteredCharacters = c;
     })
+  }
+
+  openCloseFilter(){
+    this.isFilterClosed = !this.isFilterClosed;
   }
 
   filterBy(value: any, type: string){

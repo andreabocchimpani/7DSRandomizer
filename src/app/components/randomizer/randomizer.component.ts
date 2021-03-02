@@ -25,6 +25,7 @@ export class RandomizerComponent implements OnInit {
   public filters: any;
   public isCompact: boolean;
   public isLight: boolean;
+  public isFilterClosed: boolean;
 
 
   constructor(private characterservice: CharacterService, private breakpointObserver: BreakpointObserver) {
@@ -32,6 +33,7 @@ export class RandomizerComponent implements OnInit {
     this.filters = {};
     this.isCompact = localStorage.getItem('isCompact') === 'true' ? true : false;
     this.isLight = localStorage.getItem('isLight') === 'true' ? true : false;
+    this.isFilterClosed = false;
   }
 
   ngOnInit(): void {
@@ -43,6 +45,10 @@ export class RandomizerComponent implements OnInit {
       this.characters = c;
       this.filteredCharacters = c;
     })
+  }
+
+  openCloseFilter(){
+    this.isFilterClosed = !this.isFilterClosed;
   }
 
   changeTheme() {

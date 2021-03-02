@@ -41,9 +41,11 @@
 
 .filter-title{
     font-size: 30px;
-    text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .filter-container{
@@ -181,7 +183,7 @@
 .single-character-container{
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    margin-top: 20px;
 }
 
 .random-button{
@@ -234,8 +236,13 @@
 
 .character-name{
     font-size: 13px;
-    // color: white;
     margin-top: 4px;
+}
+
+.character-name-day{
+    font-size: 13px;
+    margin-top: 4px;
+    color: #151515;
 }
 
 .squad{
@@ -248,27 +255,51 @@
     flex-direction: column;
     flex-wrap: wrap;
     min-width: 560px;
-    padding: 40px;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 599px) {
     .squad-container {
-    min-width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        min-width: auto;
     }
 
     .squad{
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
     .nosquad{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .mama-hawk-icon{
         height: 80px;
     }
+
+    .compact-button-container{
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    .filter-title{
+        font-size: 30px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
 }
 
 .grade-attribute-mobile{
@@ -281,7 +312,6 @@
 }
 
 .compact-button-container{
-    // color: white;
     width: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -376,11 +406,7 @@ input:checked + .slider:before {
     // fill: #9caec0;
     fill: #D0A667;
 }
-  
-#dayIcon, #nightIcon {
-    cursor: pointer;
-}
-  
+ 
 .toggle {
     display: none;
 }
@@ -460,4 +486,5 @@ input:checked + .slider:before {
     width: 30px;
     height: 30px;
     padding: 4px;
+    cursor: pointer;
 }

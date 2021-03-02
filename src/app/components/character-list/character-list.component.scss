@@ -133,9 +133,11 @@
 
 .filter-title{
     font-size: 30px;
-    text-align: center;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .filter-container{
@@ -388,11 +390,7 @@ input:checked + .slider:before {
     // fill: #9caec0;
     fill: #D0A667;
 }
-  
-#dayIcon, #nightIcon {
-    cursor: pointer;
-}
-  
+
 .toggle {
     display: none;
 }
@@ -466,4 +464,11 @@ input:checked + .slider:before {
   
 .toggle:checked + .toggle-button:after {
     left: 50%;
+}
+
+.filter-icon{
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    cursor: pointer;
 }
