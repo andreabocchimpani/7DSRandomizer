@@ -62,7 +62,7 @@ export class RandomizerComponent implements OnInit {
   }
 
   changeCharacter(character: any) {
-    var selectedCharacter = this.filteredCharacters[Math.floor(Math.random() * this.filteredCharacters.length)];
+    var selectedCharacter = this.filteredCharacters[Math.floor(Math.random() * this.filteredCharacters.length)]
     this.squad.splice(this.squad.indexOf(character), 1, selectedCharacter);
   }
 

@@ -42,7 +42,6 @@
 .filter-title{
     font-size: 30px;
     margin-bottom: 20px;
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -237,6 +236,7 @@
 .character-name{
     font-size: 13px;
     margin-top: 4px;
+    height: 60px;
 }
 
 .character-name-day{
@@ -294,7 +294,6 @@
     .filter-title{
         font-size: 30px;
         margin-bottom: 0px;
-        margin-top: 0px;
         display: flex;
         flex-direction: row;
         justify-content: center;
