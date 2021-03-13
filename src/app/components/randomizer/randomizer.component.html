@@ -225,7 +225,7 @@
             <div *ngIf="isCharacterSelected">
                 <div class="single-character">
                     <img src={{isCharacterSelected.images}}>
-                    <span *ngIf="!isCompact" class="character-name">{{this.isCharacterSelected.name}}</span>
+                    <span *ngIf="!isCompact" [ngClass]="(isLight)?'character-name-day':'character-name'">{{this.isCharacterSelected.name}}</span>
                 </div>
             </div>
         </div>
@@ -243,8 +243,10 @@
                     <div class="single-character">
                         <img src={{character.images}}>
                         <span *ngIf="!isCompact" [ngClass]="(isLight)?'character-name-day':'character-name'">{{character.name}}</span>
-                        <img class="update-icon" *ngIf="!isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-white.svg">
-                        <img class="update-icon" *ngIf="isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-black.svg">
+                        <button [ngClass]="(isLight)?'button-update-day':'button-update'">
+                            <img class="update-icon" *ngIf="!isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-white.svg">
+                            <img class="update-icon" *ngIf="isLight" (click)="changeCharacter(character)" src="./assets/images/refresh-black.svg">
+                        </button>
                     </div>
                 </div>
             </div>

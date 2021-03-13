@@ -47,7 +47,7 @@ export class RandomizerComponent implements OnInit {
     })
   }
 
-  openCloseFilter(){
+  openCloseFilter() {
     this.isFilterClosed = !this.isFilterClosed;
   }
 
@@ -78,15 +78,25 @@ export class RandomizerComponent implements OnInit {
   }
 
   getMoreRandom(arr, n) {
-    const tempArray = [...arr];
+    let tempArray = [...arr];
     this.squad = [];
-    while (this.squad.length !== n) {
-      const index = Math.floor(Math.random() * tempArray.length);
-      const selectedCharacter = tempArray[index];
-      if (this.squad.filter(c => c.name.includes(selectedCharacter.name[0])).length === 0) {
-        this.squad.push(tempArray[index]);
-        tempArray.splice(index, 1);
+    try {
+      for (let i = 0; this.squad.length < n; i++) {
+        if (i === 100) {
+          break;
+        }
+        const index = Math.floor(Math.random() * tempArray.length);
+        const selectedCharacter = tempArray[index];
+        if (this.squad.filter(c => c.name.includes(selectedCharacter.name.split(' ')[0])).length === 0) {
+          this.squad.push(selectedCharacter);
+          tempArray.splice(index, 1);
+        }
       }
+    }
+    catch(err) {
+      console.log('errore', err);
+      tempArray = [];
+      this.squad = [];
     }
   }
 

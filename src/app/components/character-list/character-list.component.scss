@@ -41,7 +41,7 @@
 .single-character{
     display: flex;
     flex-direction: column;
-    width: 90px;
+    width: 75px;
     margin: 12px;
 }
 
@@ -83,9 +83,17 @@
     }
 
     .character-name{
-        font-size: 10px;
+        font-size: 12px !important;
         margin-top: 4px;
         width: 60px;
+        word-wrap: break-word;
+    }
+
+    .character-name-day{
+        font-size: 12px !important;
+        margin-top: 4px;
+        width: 60px;
+        word-wrap: break-word;
     }
 
     .mama-hawk-icon{
@@ -96,12 +104,14 @@
 .character-name{
     font-size: 13px;
     margin-top: 4px;
+    word-wrap: break-word;
 }
 
 .character-name-day{
     font-size: 13px;
     margin-top: 4px;
     color: #151515;
+    word-wrap: break-word;
 }
 
 .characters-container{

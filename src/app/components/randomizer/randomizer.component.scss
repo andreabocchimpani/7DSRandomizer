@@ -41,7 +41,6 @@
 
 .filter-title{
     font-size: 30px;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -176,7 +175,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 15px;
 }
 
 .single-character-container{
@@ -242,6 +240,7 @@
 .character-name-day{
     font-size: 13px;
     margin-top: 4px;
+    height: 60px;
     color: #151515;
 }
 
@@ -482,8 +481,37 @@ input:checked + .slider:before {
 }
 
 .update-icon{
-    width: 30px;
-    height: 30px;
-    padding: 4px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
+    vertical-align: middle;
+}
+
+.button-update{
+    text-align: center;
+    background-color: #252525;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: 0 5px 15px #404040, 0 4px 12px #404040;
+    margin: 16px;
+    height: 40px;
+    width: 40px;
+}
+
+.button-update-day{
+    text-align: center;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: 0 5px 15px #404040, 0 4px 12px #404040;
+    margin: 16px;
+    height: 40px;
+    width: 40px;
+}
+
+.button-update:hover{
+    box-shadow: 0 5px 15px #606060, 0 4px 12px #606060;
+}
+
+.button-update-day:hover{
+    box-shadow: 0 5px 15px #151515, 0 4px 12px #151515;
 }
